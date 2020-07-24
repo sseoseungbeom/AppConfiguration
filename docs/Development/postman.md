@@ -18,7 +18,7 @@ To test the REST API using [Postman](https://www.getpostman.com/), requests need
     var headers = signRequest(
         pm.request.url.getHost(),
         pm.request.method,
-        pm.request.url.getPathWithQuery(),
+        pm.request.url.getPathWithQuery({ ignoreDisabled: true }),
         isBodyEmpty ? undefined : pm.request.body.toString(),
         credential,
         secret);
